@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teacher Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="firebase-config.js"></script>
+</head>
+<body class="teacher-body">
+  <div id="teacher-login-screen" class="teacher-login-wrap">
+    <div class="teacher-card">
+      <p class="eyebrow">TEACHER ACCESS</p>
+      <h1>Reading Test Dashboard</h1>
+      <form id="teacher-login-form">
+        <label for="teacher-password">Password</label>
+        <input id="teacher-password" type="password" placeholder="Enter password" autocomplete="current-password">
+        <p id="teacher-error" class="error" hidden>Incorrect password.</p>
+        <button type="submit" class="primary-btn full-width">Open dashboard</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="teacher-dashboard-screen" class="teacher-dashboard" hidden>
+    <div class="dashboard-header">
+      <div>
+        <p class="eyebrow">CLASS DATA</p>
+        <h1>Teacher Dashboard</h1>
+      </div>
+      <button id="logout-btn" class="secondary-btn" type="button">Log out</button>
+    </div>
+
+    <div class="dashboard-summary">
+      <div class="summary-card">
+        <span>Total submissions</span>
+        <strong id="submission-count">0</strong>
+      </div>
+      <div class="summary-card">
+        <span>Students</span>
+        <strong id="student-count">0</strong>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="submission-table">
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Module</th>
+            <th>Score</th>
+            <th>Answered</th>
+            <th>Answered numbers</th>
+            <th>Unanswered numbers</th>
+            <th>Unscored numbers</th>
+            <th>Submitted</th>
+          </tr>
+        </thead>
+        <tbody id="submission-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="teacher-dashboard_Version2.js"></script>
+</body>
+</html>
